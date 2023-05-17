@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<section>
+    <div class="new_todo  p-4">
+        <form action=""  method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label text-white">{{form.title.label}}</label>
+                <input type="text" name="title" value="{{form.title.value}}" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label text-white">{{form.description.label}}</label>
+                <textarea type="text" name="description" rows="7" class="form-control" id="exampleFormControlInput1">{{form.description.value}}</textarea>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-primary text-white ">Back</a>
+                <input type="submit" class="btn btn-primary" value="Summit">
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock content %}
